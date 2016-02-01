@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Q2d-ah-xNd">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="vhE-pa-1xy">
+            <objects>
+                <navigationController id="Q2d-ah-xNd" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="c0O-77-qKX">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="bx3-84-Z92" kind="relationship" relationship="rootViewController" id="EbM-sC-fFt"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="O6b-W5-DHz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-31" y="349"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="953-l3-52E">
+            <objects>
+                <viewController id="bx3-84-Z92" customClass="ViewController" customModule="EditImage" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="S6B-ow-jYI"/>
+                        <viewControllerLayoutGuide type="bottom" id="3Fc-eO-8YY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="AJg-ae-TVM">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bNX-9G-KRu">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="9PE-CE-X1f"/>
+                                    <constraint firstAttribute="width" constant="50" id="QbI-84-5TN"/>
+                                </constraints>
+                                <state key="normal" title="跳转"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="9PE-CE-X1f"/>
+                                        <exclude reference="QbI-84-5TN"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="9PE-CE-X1f"/>
+                                        <include reference="QbI-84-5TN"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="goPage" destination="bx3-84-Z92" eventType="touchUpInside" id="gD8-eM-5em"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="显示回调函数" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="amz-5X-yHH">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.99607843139999996" green="0.82745098039999998" blue="0.1764705882" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="amz-5X-yHH" firstAttribute="centerY" secondItem="AJg-ae-TVM" secondAttribute="centerY" id="6Ub-m8-lSt"/>
+                            <constraint firstItem="amz-5X-yHH" firstAttribute="centerX" secondItem="AJg-ae-TVM" secondAttribute="centerX" id="lan-DG-lzM"/>
+                            <constraint firstItem="bNX-9G-KRu" firstAttribute="centerX" secondItem="AJg-ae-TVM" secondAttribute="centerX" id="nGE-9l-hRK"/>
+                            <constraint firstItem="bNX-9G-KRu" firstAttribute="top" secondItem="S6B-ow-jYI" secondAttribute="bottom" constant="45" id="pEs-Uj-A0N"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="bNX-9G-KRu"/>
+                                <exclude reference="amz-5X-yHH"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="nGE-9l-hRK"/>
+                                <exclude reference="pEs-Uj-A0N"/>
+                                <exclude reference="6Ub-m8-lSt"/>
+                                <exclude reference="lan-DG-lzM"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="bNX-9G-KRu"/>
+                                <include reference="amz-5X-yHH"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="nGE-9l-hRK"/>
+                                <include reference="pEs-Uj-A0N"/>
+                                <include reference="6Ub-m8-lSt"/>
+                                <include reference="lan-DG-lzM"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" id="f63-oi-Bh6"/>
+                    <connections>
+                        <outlet property="btn" destination="bNX-9G-KRu" id="ird-9B-eo0"/>
+                        <outlet property="label" destination="amz-5X-yHH" id="unv-NT-Wpg"/>
+                        <segue destination="e5r-fY-GEw" kind="push" identifier="segue" id="bZX-eb-0sa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ujT-QH-59c" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="705" y="348.75"/>
+        </scene>
+        <!--Edit Page-->
+        <scene sceneID="O28-dR-VHj">
+            <objects>
+                <viewController id="e5r-fY-GEw" customClass="editPage" customModule="EditImage" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="mJe-Sc-abz"/>
+                        <viewControllerLayoutGuide type="bottom" id="iuG-sV-XaT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="MAu-Ik-0Xg">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Stm-Vs-Zml">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="合成"/>
+                                <variation key="heightClass=regular-widthClass=compact" ambiguous="YES">
+                                    <rect key="frame" x="0.0" y="750" width="30" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="exportImage" destination="e5r-fY-GEw" eventType="touchUpInside" id="sJk-WF-fL4"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="iuG-sV-XaT" firstAttribute="top" secondItem="Stm-Vs-Zml" secondAttribute="bottom" constant="20" id="pgq-OC-nbD"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="Stm-Vs-Zml"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="pgq-OC-nbD"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="Stm-Vs-Zml"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="pgq-OC-nbD"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" id="cIl-Gk-1r1"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CY0-cQ-Ben" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1525.5" y="348.75"/>
+        </scene>
+    </scenes>
+</document>
