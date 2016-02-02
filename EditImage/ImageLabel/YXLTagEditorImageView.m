@@ -9,6 +9,7 @@
 #import "YXLTagEditorImageView.h"
 #import "YXLTagView.h"
 #import "MiYiTagSearchBarVC.h"
+#import "titleTagVC.h"
 @interface YXLTagEditorImageView ()<UIGestureRecognizerDelegate>
 {
     NSMutableArray *arrayTagS;
@@ -95,23 +96,26 @@
     
     CGFloat widthAndHeight =100;
     
-    buttonOne =[self getButtonOne];
-    buttonOne.layer.cornerRadius=widthAndHeight/2;
-    [viewCover addSubview:buttonOne];
-    [buttonOne mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.equalTo(self).offset(-(widthAndHeight/1.3));
-        make.centerY.equalTo(self);
-        make.size.mas_equalTo(CGSizeMake(widthAndHeight, widthAndHeight));
-    }];
-    
-    buttonTwo =[self getButtonTwo];
-    buttonTwo.layer.cornerRadius=widthAndHeight/2;
-    [viewCover addSubview:buttonTwo];
-    [buttonTwo mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.equalTo(self).offset(widthAndHeight/1.3);
-        make.centerY.equalTo(self);
-        make.size.mas_equalTo(CGSizeMake(widthAndHeight, widthAndHeight));
-    }];
+//    buttonOne =[self getButtonOne];
+//    buttonOne.layer.cornerRadius=widthAndHeight/2;
+//    [viewCover addSubview:buttonOne];
+//    [buttonOne mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.centerX.equalTo(self).offset(-(widthAndHeight/1.3));
+//        make.centerY.equalTo(self);
+//        make.size.mas_equalTo(CGSizeMake(widthAndHeight, widthAndHeight));
+//    }];
+//    
+//    
+//    
+//    
+//    buttonTwo =[self getButtonTwo];
+//    buttonTwo.layer.cornerRadius=widthAndHeight/2;
+//    [viewCover addSubview:buttonTwo];
+//    [buttonTwo mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.centerX.equalTo(self).offset(widthAndHeight/1.3);
+//        make.centerY.equalTo(self);
+//        make.size.mas_equalTo(CGSizeMake(widthAndHeight, widthAndHeight));
+//    }];
 }
 /**
  *  mbp界面的动画
@@ -130,6 +134,11 @@
                 
             }];
         }];
+        
+        [self clickAddTag];
+        
+        
+        
     }else{
         [UIView animateWithDuration:0.1 animations:^{
             viewCover.alpha=0;
@@ -183,7 +192,9 @@
 
 #pragma -mark 点击创建标签
 -(void)addtagViewimageClickinit:(CGPoint)point isAddTagView:(BOOL)isAdd{
+    
     YXLTagView *viewTagNew =[[YXLTagView alloc]init];
+    
     UIPanGestureRecognizer *panTagView =[[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(panTagView:)];
     panTagView.minimumNumberOfTouches=1;
     panTagView.maximumNumberOfTouches=1;
@@ -367,9 +378,12 @@
 
 -(void)clickViewMBP{
     [self mbpAnimation:NO];
+    //[self clickButtonOne];
+    
 }
 
 -(void)clickButtonOne{
+    
     MiYiTagSearchBarVC *vc =[[MiYiTagSearchBarVC alloc]init];
     __weak YXLTagEditorImageView *ws =self;
     vc.block=^(NSString *text){
@@ -378,10 +392,12 @@
         [self clickViewMBP];
         [ws correct:text isPositiveAndNegative:YES];
     };
+    
     [self.viewC.navigationController pushViewController:vc animated:YES];
 }
 
 -(void)clickButtonTwo{
+    
     MiYiTagSearchBarVC *vc =[[MiYiTagSearchBarVC alloc]init];
     __weak YXLTagEditorImageView *ws =self;
     vc.block=^(NSString *text){
@@ -392,6 +408,22 @@
     };
     [self.viewC.navigationController pushViewController:vc animated:YES];
 }
+
+/*
+ *跳转页面直接添加标签
+ */
+-(void)clickAddTag{
+    titleTagVC *vc =[[titleTagVC alloc]init];
+    __weak YXLTagEditorImageView *ws =self;
+    vc.block=^(NSString *text){
+        viewTag.imageLabel.labelWaterFlow.text=text;
+        viewTag.isImageLabelShow=YES;
+        [self clickViewMBP];
+        [ws correct:text isPositiveAndNegative:YES];
+    };
+    [self.viewC.navigationController pushViewController:vc animated:YES];
+}
+
 /**
  *  修正
  */

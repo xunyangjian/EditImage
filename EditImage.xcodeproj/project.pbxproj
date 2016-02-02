@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		100349BC1C60D78600FF2B00 /* add.png in Resources */ = {isa = PBXBuildFile; fileRef = 100349BB1C60D78600FF2B00 /* add.png */; };
+		100349C11C60EB0200FF2B00 /* tagTitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100349C01C60EB0200FF2B00 /* tagTitleViewController.swift */; };
+		100349C51C60EF5300FF2B00 /* titleTagVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 100349C41C60EF5300FF2B00 /* titleTagVC.m */; };
 		1007E1D11C5F8CEA000CBC48 /* pch.m in Sources */ = {isa = PBXBuildFile; fileRef = 1007E1C81C5F8CEA000CBC48 /* pch.m */; };
 		1007E1D21C5F8CEA000CBC48 /* YXLTagEditorImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1007E1CA1C5F8CEA000CBC48 /* YXLTagEditorImageView.m */; };
 		1007E1D31C5F8CEA000CBC48 /* YXLTagVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1007E1CC1C5F8CEA000CBC48 /* YXLTagVC.m */; };
@@ -60,6 +63,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		100349BB1C60D78600FF2B00 /* add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = add.png; path = "ImageLabel/测试用的/add.png"; sourceTree = "<group>"; };
+		100349C01C60EB0200FF2B00 /* tagTitleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tagTitleViewController.swift; sourceTree = "<group>"; };
+		100349C31C60EF5300FF2B00 /* titleTagVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = titleTagVC.h; sourceTree = "<group>"; };
+		100349C41C60EF5300FF2B00 /* titleTagVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = titleTagVC.m; sourceTree = "<group>"; };
 		1007E1C71C5F8CEA000CBC48 /* pch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = pch.h; path = ImageLabel/pch.h; sourceTree = "<group>"; };
 		1007E1C81C5F8CEA000CBC48 /* pch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = pch.m; path = ImageLabel/pch.m; sourceTree = "<group>"; };
 		1007E1C91C5F8CEA000CBC48 /* YXLTagEditorImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YXLTagEditorImageView.h; path = ImageLabel/YXLTagEditorImageView.h; sourceTree = "<group>"; };
@@ -207,6 +214,7 @@
 		1007E2021C5F9155000CBC48 /* test */ = {
 			isa = PBXGroup;
 			children = (
+				100349BB1C60D78600FF2B00 /* add.png */,
 				1007E2031C5F916D000CBC48 /* 2.plist */,
 				1007E2041C5F916D000CBC48 /* 2011102267331457.jpg */,
 			);
@@ -249,6 +257,8 @@
 		107ED2C81C56616000B46EB5 /* EditImage */ = {
 			isa = PBXGroup;
 			children = (
+				100349C31C60EF5300FF2B00 /* titleTagVC.h */,
+				100349C41C60EF5300FF2B00 /* titleTagVC.m */,
 				1007E1D81C5F9047000CBC48 /* Masonry */,
 				1007E1C31C5F8C9D000CBC48 /* tagView */,
 				107ED2C91C56616000B46EB5 /* AppDelegate.swift */,
@@ -259,6 +269,7 @@
 				107ED2D21C56616000B46EB5 /* LaunchScreen.storyboard */,
 				107ED2D51C56616000B46EB5 /* Info.plist */,
 				107ED2FD1C56679D00B46EB5 /* bridge.h */,
+				100349C01C60EB0200FF2B00 /* tagTitleViewController.swift */,
 			);
 			path = EditImage;
 			sourceTree = "<group>";
@@ -388,6 +399,7 @@
 				1007E2061C5F916D000CBC48 /* 2011102267331457.jpg in Resources */,
 				1007E2051C5F916D000CBC48 /* 2.plist in Resources */,
 				1007E2121C5F918B000CBC48 /* textTagAnti@2x.png in Resources */,
+				100349BC1C60D78600FF2B00 /* add.png in Resources */,
 				107ED2D41C56616000B46EB5 /* LaunchScreen.storyboard in Resources */,
 				107ED2D11C56616000B46EB5 /* Assets.xcassets in Resources */,
 				1007E2101C5F918B000CBC48 /* textTag@2x.png in Resources */,
@@ -430,7 +442,9 @@
 				1007E1F31C5F905F000CBC48 /* MASConstraint.m in Sources */,
 				1007E1F91C5F905F000CBC48 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				1007E1F21C5F905F000CBC48 /* MASCompositeConstraint.m in Sources */,
+				100349C51C60EF5300FF2B00 /* titleTagVC.m in Sources */,
 				1007E1D31C5F8CEA000CBC48 /* YXLTagVC.m in Sources */,
+				100349C11C60EB0200FF2B00 /* tagTitleViewController.swift in Sources */,
 				1007E1D41C5F8CEA000CBC48 /* YXLTagView.m in Sources */,
 				1007E1D21C5F8CEA000CBC48 /* YXLTagEditorImageView.m in Sources */,
 				1007E1F41C5F905F000CBC48 /* MASConstraintMaker.m in Sources */,

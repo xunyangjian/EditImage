@@ -97,11 +97,13 @@
     
     return cell;
 }
+
 -(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
     NSDictionary *dict = self.dataList[section];
     return dict[@"group"];
 }
+
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSDictionary *dict = self.dataList[indexPath.section];

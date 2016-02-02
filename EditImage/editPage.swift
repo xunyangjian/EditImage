@@ -22,6 +22,8 @@ class editPage : UIViewController{
         
         tagEditorImageView.viewC = self
         
+        //tagEditorImageView.backgroundColor = UIColor
+        
         tagEditorImageView.userInteractionEnabled = true
         
         self.view.addSubview(tagEditorImageView)
@@ -29,11 +31,9 @@ class editPage : UIViewController{
         
         tagEditorImageView.mas_makeConstraints { (make:MASConstraintMaker!) -> Void in
                 make.edges.equalTo()
-            
         }
+        
     
-        
-        
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -76,7 +76,7 @@ class editPage : UIViewController{
         let rect = CGRectMake(0, 0, imageWidth, imageHeight)
         
         //添加图片
-        let imageHandbag:UIImage! = UIImage(named:"textTagAnti@3x.png")
+        let imageHandbag:UIImage! = UIImage(named:"add.png")
         
         // 宽；高
         let imageHandbagWidth = imageHandbag.size.width
@@ -96,20 +96,21 @@ class editPage : UIViewController{
         
         let textStyle = NSMutableParagraphStyle.defaultParagraphStyle().mutableCopy() as! NSMutableParagraphStyle
         
+        //文字样式
         let textFontAttributes = [
             NSFontAttributeName: font,
             NSForegroundColorAttributeName: UIColor.yellowColor(),
             NSParagraphStyleAttributeName: textStyle
         ]
         
-        // テキストをdrawInRectメソッドでレンダリング
+        //标题绘制区域
         text!.drawInRect(textRect, withAttributes: textFontAttributes)
         //text.drawInRe
         
-        // ハンドバッグの描画領域
-        let handbagRect = CGRectMake(imageWidth/2+100, imageHeight/2+50, imageHandbagWidth*3/2, imageHandbagHeight*3/2)
+        //图片绘制区域
+        let handbagRect = CGRectMake(imageWidth/2+100, imageHeight/2+50, imageHandbagWidth, imageHandbagHeight)
         
-        // ハンドバッグをdrawInRectメソッドでレンダリング
+        //绘制图片
         imageHandbag.drawInRect(handbagRect)
         
         // Context に描画された画像を新しく設定
@@ -118,24 +119,6 @@ class editPage : UIViewController{
         // Context 終了
         UIGraphicsEndImageContext()
         // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-        
-        
-        // UIImageView インスタンス生成
-        let imageView = UIImageView()
-        imageView.image = newImage
-        
-        // 画像サイズをスクリーン幅に合わせる, scaling
-        let scale = screenWidth / imageWidth
-        let newRect = CGRectMake(0, 0, imageWidth*scale, imageHeight*scale)
-        
-        // ImageView frame をCGRectMakeで作った矩形に合わせる
-        imageView.frame = newRect
-        
-        // 画像の中心をスクリーンの中心にする
-        imageView.center = CGPointMake(screenWidth/2, screenHeight/2)
-        
-        // view に ImageView を追加する
-        //self.view.addSubview(imageView)
         
         self.tagEditorImageView.imagePreviews.image = newImage
         
